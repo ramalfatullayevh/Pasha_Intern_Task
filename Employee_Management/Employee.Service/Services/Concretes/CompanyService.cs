@@ -38,6 +38,7 @@ namespace Employee.Service.Services.Concretes
             var existingCompany = await GetCompanyByIdAsync(id);
             if (existingCompany == null) return false;
             existingCompany.Name = company.Name; 
+            existingCompany.CreatedDate = company.CreatedDate;  
             await _unitOfWork.GetRepository<Company>().UpdateAsync(existingCompany);
             await _unitOfWork.SaveAsync();
             return true;
