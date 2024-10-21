@@ -6,7 +6,7 @@ namespace Employee.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DepartmentController : Controller
+    public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService _departmentService;
 
@@ -14,7 +14,7 @@ namespace Employee.API.Controllers
 
         // Get All Departments
         [HttpGet]
-        public async Task<IActionResult> GetAllDepartments()
+        public async Task<IActionResult> GetAllDepartmentsAsync()
         {
             try
             {
@@ -29,7 +29,7 @@ namespace Employee.API.Controllers
 
         // Get A Department by ID
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetDepartmentById(int id)
+        public async Task<IActionResult> GetDepartmentByIdAsync(int id)
         {
             try
             {
@@ -45,12 +45,12 @@ namespace Employee.API.Controllers
 
         // Create Department
         [HttpPost]
-        public async Task<IActionResult> CreateDepartment([FromBody] Department department)
+        public async Task<IActionResult> CreateDepartmentAsync([FromBody] Department department)
         {
             try
             {
                 await _departmentService.CreateDepartmentAsync(department);
-                return CreatedAtAction(nameof(GetDepartmentById), new { id = department.Id }, department);
+                return CreatedAtAction(nameof(GetDepartmentByIdAsync), new { id = department.Id }, department);
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace Employee.API.Controllers
 
         // Update Department
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateDepartment(int id, [FromBody] Department department)
+        public async Task<IActionResult> UpdateDepartmentAsync(int id, [FromBody] Department department)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace Employee.API.Controllers
 
         // Delete Department
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteDepartment(int id)
+        public async Task<IActionResult> DeleteDepartmentAsync(int id)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace Employee.API.Controllers
 
         // Get All Departments by Company ID
         [HttpGet("company/{companyId}")]
-        public async Task<IActionResult> GetDepartmentsByCompanyId(int companyId)
+        public async Task<IActionResult> GetDepartmentsByCompanyIdAsync(int companyId)
         {
             try
             {

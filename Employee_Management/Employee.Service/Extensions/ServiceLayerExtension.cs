@@ -15,7 +15,7 @@ namespace Employee.Service.Extensions
 
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IDepartmentService, DepartmentService>();
-
+            services.AddScoped<IEmployeeService, EmployeeService>();
 
             return services;
         }

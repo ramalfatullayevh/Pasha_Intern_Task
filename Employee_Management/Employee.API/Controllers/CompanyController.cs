@@ -14,7 +14,7 @@ namespace Employee.API.Controllers
 
         // Get All Companies
         [HttpGet]
-        public async Task<IActionResult> GetAllCompanies()
+        public async Task<IActionResult> GetAllCompaniesAsync()
         {
             try
             {
@@ -29,7 +29,7 @@ namespace Employee.API.Controllers
 
         // Get Company By ID
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCompany(int id)
+        public async Task<IActionResult> GetCompanyByIdAsync(int id)
         {
             try
             {
@@ -45,12 +45,12 @@ namespace Employee.API.Controllers
 
         // Create Company
         [HttpPost]
-        public async Task<IActionResult> CreateCompany([FromBody] Company company)
+        public async Task<IActionResult> CreateCompanyAsync([FromBody] Company company)
         {
             try
             {
                 await _companyService.CreateCompanyAsync(company);
-                return CreatedAtAction(nameof(GetCompany), new { id = company.Id }, company);
+                return CreatedAtAction(nameof(GetCompanyByIdAsync), new { id = company.Id }, company);
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace Employee.API.Controllers
 
         // Update Company
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateCompany(int id, [FromBody] Company company)
+        public async Task<IActionResult> UpdateCompanyAsync(int id, [FromBody] Company company)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace Employee.API.Controllers
 
         // Delete Company
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCompany(int id)
+        public async Task<IActionResult> DeleteCompanyAsync(int id)
         {
             try
             {
