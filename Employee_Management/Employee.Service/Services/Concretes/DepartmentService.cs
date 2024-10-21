@@ -38,6 +38,12 @@ namespace Employee.Service.Services.Concretes
             return allDepartments.Where(d => d.CompanyId == companyId).ToList();
         }
 
+        public async Task<ICollection<Employe>> GetEmployeesByDepartmentIdAsync(int departmentId)
+        {
+            var allEmployees = await _unitOfWork.GetRepository<Employe>().GetAllAsync();
+            return allEmployees.Where(e => e.DepartmentId == departmentId).ToList();
+        }
+
         public async Task<bool> UpdateDepartmentAsync(int id, Department department)
         {
             var existingDepartment = await GetDepartmentByIdAsync(id);

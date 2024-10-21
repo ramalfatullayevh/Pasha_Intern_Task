@@ -33,6 +33,15 @@ namespace Employee.Service.Services.Concretes
             return await _unitOfWork.GetRepository<Company>().GetByIdAsync(id);
         }
 
+        public async Task<ICollection<Employe>> GetEmployeesByCompanyIdAsync(int companyId)
+        {
+            var departments = await _unitOfWork.GetRepository<Department>().GetAllAsync();
+            var departmentIds = departments.Where(d => d.CompanyId == companyId).Select(d => d.Id).ToList();
+            var allEmployees = await _unitOfWork.GetRepository<Employe>().GetAllAsync();
+            var employees = allEmployees.Where(e => departmentIds.Contains(e.DepartmentId)).ToList();
+            return employees;
+        }
+
         public async Task<bool> UpdateCompanyAsync(int id, Company company)
         {
             var existingCompany = await GetCompanyByIdAsync(id);

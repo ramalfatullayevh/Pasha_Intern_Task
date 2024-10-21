@@ -13,5 +13,6 @@ namespace Employee.Service.Services.Abstractions
         Task DeleteCompanyAsync(int id);
 
         Task<bool> UpdateCompanyAsync(int id, Company company);
+        Task<ICollection<Employe>> GetEmployeesByCompanyIdAsync(int companyId);  
     }
 }
