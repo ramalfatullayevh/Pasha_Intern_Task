@@ -9,3 +9,9 @@ C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\
 C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\obj\Debug\net6.0\refint\Employee.Service.dll
 C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\obj\Debug\net6.0\Employee.Service.pdb
 C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\obj\Debug\net6.0\ref\Employee.Service.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\bin\Debug\net6.0\Employee.Core.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\bin\Debug\net6.0\Employee.Data.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\bin\Debug\net6.0\Employee.Data.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\bin\Debug\net6.0\Employee.Core.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\obj\Debug\net6.0\Employee.Service.csproj.AssemblyReference.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Service\obj\Debug\net6.0\Employee.Service.csproj.CopyComplete

@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Employee.API/1.0.0": {
         "dependencies": {
-          "Employee.Data": "1.0.0",
+          "Employee.Service": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "6.0.35",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
@@ -507,6 +507,14 @@
         "runtime": {
           "Employee.Data.dll": {}
         }
+      },
+      "Employee.Service/1.0.0": {
+        "dependencies": {
+          "Employee.Data": "1.0.0"
+        },
+        "runtime": {
+          "Employee.Service.dll": {}
+        }
       }
     }
   },
@@ -858,6 +866,11 @@
       "sha512": ""
     },
     "Employee.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Employee.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
