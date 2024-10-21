@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5iQSMvw8OWhK6UNzky/8Fgjl638Dhy3GhZpnWgaYliKpXx0EefNbdv6LdmWku4V2JCqKTWiRBvoFYSeuhPV5+w==",
+  "dgSpecHash": "8FGCXwiDq90dT+MJHH1ARgxmr2wTANFQVGFMebjUtNlOcwztuD8/uRmR/QtuSngJR8gR4Y59sFEc3VDLnDUJEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\EmployeeManagement.Data.csproj",
+  "projectFilePath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\Employee.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ramal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Ramal\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

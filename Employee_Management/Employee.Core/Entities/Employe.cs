@@ -2,10 +2,10 @@
 
 namespace Employee.Core.Entities
 {
-    public class Employee:BaseEntity
+    public class Employe:BaseEntity
     {
         public int DepartmentId { get; set; }
         public string Surname { get; set; }
-        public DateTime BirthDate { get; set; } 
+        public DateTime BirthDate { get; set; }
     }
 }

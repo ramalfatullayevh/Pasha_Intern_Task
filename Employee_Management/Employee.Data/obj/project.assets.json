@@ -783,14 +783,14 @@
           }
         }
       },
-      "EmployeeManagement.Core/1.0.0": {
+      "Employee.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/EmployeeManagement.Core.dll": {}
+          "bin/placeholder/Employee.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EmployeeManagement.Core.dll": {}
+          "bin/placeholder/Employee.Core.dll": {}
         }
       }
     }
@@ -2014,15 +2014,15 @@
         "version.txt"
       ]
     },
-    "EmployeeManagement.Core/1.0.0": {
+    "Employee.Core/1.0.0": {
       "type": "project",
-      "path": "../Employee.Core/EmployeeManagement.Core.csproj",
-      "msbuildProject": "../Employee.Core/EmployeeManagement.Core.csproj"
+      "path": "../Employee.Core/Employee.Core.csproj",
+      "msbuildProject": "../Employee.Core/Employee.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "EmployeeManagement.Core >= 1.0.0",
+      "Employee.Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.35",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.35",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.35"
@@ -2034,9 +2034,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\EmployeeManagement.Data.csproj",
-      "projectName": "EmployeeManagement.Data",
-      "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\EmployeeManagement.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\Employee.Data.csproj",
+      "projectName": "Employee.Data",
+      "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\Employee.Data.csproj",
       "packagesPath": "C:\\Users\\Ramal\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\obj\\",
       "projectStyle": "PackageReference",
@@ -2055,8 +2055,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\EmployeeManagement.Core.csproj": {
-              "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\EmployeeManagement.Core.csproj"
+            "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\Employee.Core.csproj": {
+              "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\Employee.Core.csproj"
             }
           }
         }

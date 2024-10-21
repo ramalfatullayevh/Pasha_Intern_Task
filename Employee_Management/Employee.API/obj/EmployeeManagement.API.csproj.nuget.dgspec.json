@@ -78,12 +78,12 @@
         }
       }
     },
-    "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\EmployeeManagement.Core.csproj": {
+    "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\Employee.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\EmployeeManagement.Core.csproj",
-        "projectName": "EmployeeManagement.Core",
-        "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\EmployeeManagement.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\Employee.Core.csproj",
+        "projectName": "Employee.Core",
+        "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\Employee.Core.csproj",
         "packagesPath": "C:\\Users\\Ramal\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\obj\\",
         "projectStyle": "PackageReference",
@@ -157,8 +157,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\EmployeeManagement.Core.csproj": {
-                "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\EmployeeManagement.Core.csproj"
+              "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\Employee.Core.csproj": {
+                "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Core\\Employee.Core.csproj"
               }
             }
           }

@@ -1,0 +1,17 @@
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\Employee.Data.deps.json
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\Employee.Data.runtimeconfig.json
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\Employee.Data.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\Employee.Data.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\Employee.Core.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\Employee.Core.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.csproj.AssemblyReference.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.AssemblyInfoInputs.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.AssemblyInfo.cs
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.csproj.CoreCompileInputs.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.csproj.CopyComplete
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\refint\Employee.Data.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\Employee.Data.genruntimeconfig.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\ref\Employee.Data.dll

@@ -10,6 +10,7 @@ namespace Employee.Data.Context
 
         public DbSet<Company> Companies { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Employe> Employees { get; set; }
     }
 
 }

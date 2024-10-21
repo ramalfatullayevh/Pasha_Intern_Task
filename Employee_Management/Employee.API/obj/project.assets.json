@@ -858,28 +858,28 @@
           }
         }
       },
-      "EmployeeManagement.Core/1.0.0": {
+      "Employee.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/EmployeeManagement.Core.dll": {}
+          "bin/placeholder/Employee.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EmployeeManagement.Core.dll": {}
+          "bin/placeholder/Employee.Core.dll": {}
         }
       },
-      "EmployeeManagement.Data/1.0.0": {
+      "Employee.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "EmployeeManagement.Core": "1.0.0",
+          "Employee.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.35"
         },
         "compile": {
-          "bin/placeholder/EmployeeManagement.Data.dll": {}
+          "bin/placeholder/Employee.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EmployeeManagement.Data.dll": {}
+          "bin/placeholder/Employee.Data.dll": {}
         }
       }
     }
@@ -2416,20 +2416,20 @@
         "version.txt"
       ]
     },
-    "EmployeeManagement.Core/1.0.0": {
+    "Employee.Core/1.0.0": {
       "type": "project",
-      "path": "../Employee.Core/EmployeeManagement.Core.csproj",
-      "msbuildProject": "../Employee.Core/EmployeeManagement.Core.csproj"
+      "path": "../Employee.Core/Employee.Core.csproj",
+      "msbuildProject": "../Employee.Core/Employee.Core.csproj"
     },
-    "EmployeeManagement.Data/1.0.0": {
+    "Employee.Data/1.0.0": {
       "type": "project",
-      "path": "../Employee.Data/EmployeeManagement.Data.csproj",
-      "msbuildProject": "../Employee.Data/EmployeeManagement.Data.csproj"
+      "path": "../Employee.Data/Employee.Data.csproj",
+      "msbuildProject": "../Employee.Data/Employee.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "EmployeeManagement.Data >= 1.0.0",
+      "Employee.Data >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.35",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -2440,9 +2440,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.API\\EmployeeManagement.API.csproj",
-      "projectName": "EmployeeManagement.API",
-      "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.API\\EmployeeManagement.API.csproj",
+      "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.API\\Employee.API.csproj",
+      "projectName": "Employee.API",
+      "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.API\\Employee.API.csproj",
       "packagesPath": "C:\\Users\\Ramal\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.API\\obj\\",
       "projectStyle": "PackageReference",
@@ -2461,8 +2461,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\EmployeeManagement.Data.csproj": {
-              "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\EmployeeManagement.Data.csproj"
+            "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\Employee.Data.csproj": {
+              "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\Employee.Data.csproj"
             }
           }
         }

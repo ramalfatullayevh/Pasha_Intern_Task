@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "BFM965Dvd6AnMht/tj7Mnx1G5edMBMn8YckPnGvdX/E=",
-  "Source": "EmployeeManagement.API",
-  "BasePath": "_content/EmployeeManagement.API",
+  "Hash": "Rjru2WaiUMI7BoGfjbeAGlRoho7SPRSjTsqzOXmSeSY=",
+  "Source": "Employee.API",
+  "BasePath": "_content/Employee.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
