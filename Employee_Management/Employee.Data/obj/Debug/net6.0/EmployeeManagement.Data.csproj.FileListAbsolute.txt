@@ -1,0 +1,17 @@
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.csproj.AssemblyReference.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.AssemblyInfoInputs.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.AssemblyInfo.cs
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.csproj.CoreCompileInputs.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\EmployeeManagement.Data.deps.json
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\EmployeeManagement.Data.runtimeconfig.json
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\EmployeeManagement.Data.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\EmployeeManagement.Data.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\EmployeeManagement.Core.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\bin\Debug\net6.0\EmployeeManagement.Core.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.csproj.CopyComplete
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\refint\EmployeeManagement.Data.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\EmployeeManagement.Data.genruntimeconfig.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Data\obj\Debug\net6.0\ref\EmployeeManagement.Data.dll

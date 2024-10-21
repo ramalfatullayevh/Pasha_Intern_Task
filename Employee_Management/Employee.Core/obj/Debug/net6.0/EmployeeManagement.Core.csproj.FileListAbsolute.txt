@@ -1,0 +1,11 @@
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\bin\Debug\net6.0\EmployeeManagement.Core.deps.json
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\bin\Debug\net6.0\EmployeeManagement.Core.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\bin\Debug\net6.0\EmployeeManagement.Core.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\EmployeeManagement.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\EmployeeManagement.Core.AssemblyInfoInputs.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\EmployeeManagement.Core.AssemblyInfo.cs
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\EmployeeManagement.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\EmployeeManagement.Core.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\refint\EmployeeManagement.Core.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\EmployeeManagement.Core.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.Core\obj\Debug\net6.0\ref\EmployeeManagement.Core.dll

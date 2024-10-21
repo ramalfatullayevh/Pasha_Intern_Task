@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Service\\Employee.Service.csproj",
-      "projectName": "Employee.Service",
-      "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Service\\Employee.Service.csproj",
+      "projectUniqueName": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Service\\EmployeeManagement.Service.csproj",
+      "projectName": "EmployeeManagement.Service",
+      "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Service\\EmployeeManagement.Service.csproj",
       "packagesPath": "C:\\Users\\Ramal\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Service\\obj\\",
       "projectStyle": "PackageReference",
