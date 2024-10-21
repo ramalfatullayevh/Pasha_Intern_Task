@@ -14,6 +14,7 @@ namespace Employee.Service.Extensions
             services.DataExtension(configuration); // Database Configuration
 
             services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
 
 
             return services;
