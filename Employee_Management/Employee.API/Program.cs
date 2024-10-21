@@ -1,8 +1,9 @@
+using Employee.Service.Extensions;
 using EmployeeManagement.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.DataExtension(builder.Configuration);
+builder.Services.ServiceExtension(builder.Configuration);
 
 // Add services to the container.
 

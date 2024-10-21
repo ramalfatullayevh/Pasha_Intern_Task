@@ -881,6 +881,19 @@
         "runtime": {
           "bin/placeholder/Employee.Data.dll": {}
         }
+      },
+      "Employee.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Employee.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Employee.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Employee.Service.dll": {}
+        }
       }
     }
   },
@@ -2425,11 +2438,16 @@
       "type": "project",
       "path": "../Employee.Data/Employee.Data.csproj",
       "msbuildProject": "../Employee.Data/Employee.Data.csproj"
+    },
+    "Employee.Service/1.0.0": {
+      "type": "project",
+      "path": "../Employee.Service/Employee.Service.csproj",
+      "msbuildProject": "../Employee.Service/Employee.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Employee.Data >= 1.0.0",
+      "Employee.Service >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.35",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -2461,8 +2479,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\Employee.Data.csproj": {
-              "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Data\\Employee.Data.csproj"
+            "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Service\\Employee.Service.csproj": {
+              "projectPath": "C:\\Users\\Ramal\\Desktop\\Pasha_Employee_Task\\Employee_Management\\Employee.Service\\Employee.Service.csproj"
             }
           }
         }

@@ -10,7 +10,7 @@ namespace Employee.Data.Repositories.Abstraction
 
 
         //GetById
-        T GetByIdAsync(int id);
+        Task<T> GetByIdAsync(int id);
 
         //Add
         Task AddAsync(T entity);

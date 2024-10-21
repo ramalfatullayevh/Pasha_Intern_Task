@@ -16,29 +16,31 @@ namespace Employee.Data.Repositories.Concrete
             _obj = _context.Set<T>();
         }
 
-        public Task AddAsync(T entity)
+        public async Task AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            await _obj.AddAsync(entity);
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var entity = await _obj.FindAsync(id);
+            if (entity != null)  _obj.Remove(entity);
         }
 
-        public Task<ICollection<T>> GetAllAsync()
+        public async Task<ICollection<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _obj.ToListAsync();
         }
 
-        public T GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _obj.FindAsync(id);
         }
 
-        public Task<T> UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => _obj.Update(entity));
+            return entity;
         }
     }
 }
