@@ -1,4 +1,5 @@
 ﻿using Employee.Core.Entities;
+using Employee.Service.DTOs;
 
 namespace Employee.Service.Services.Abstractions
 {
@@ -13,5 +14,7 @@ namespace Employee.Service.Services.Abstractions
         Task DeleteEmployeeAsync(int id);
 
         Task<bool> UpdateEmployeeAsync(int id, Employe employee);
+        Task<ICollection<Employe>> GetFilteredEmployeesAsync(EmployeeFilterDto filterDto);
+
     }
 }

@@ -105,6 +105,22 @@ namespace Employee.API.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+
+        //Get All Filtered Employees
+        [HttpGet]
+        public async Task<IActionResult> GetAllEmployeesWithFilter([FromQuery] EmployeeFilterDto filterDto)
+        {
+            try
+            {
+                var employees = await _employeeService.GetFilteredEmployeesAsync(filterDto);
+                var employeesDto = _mapper.Map<IEnumerable<EmployeeDto>>(employees);
+                return Ok(employeesDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
     }
 
 
