@@ -9,6 +9,8 @@ namespace Employee.Service.Helper
         public MappingProfiles() 
         {
             CreateMap<Company, CompanyDto>();
+            CreateMap<Department, DepartmentDto>();
+
         }
     }
 }

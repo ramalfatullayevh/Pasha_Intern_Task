@@ -1,6 +1,10 @@
-﻿using Employee.Core.Entities;
+﻿using AutoMapper;
+using Employee.Core.Entities;
+using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
+using Employee.Service.Services.Concretes;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Employee.API.Controllers
 {
@@ -9,8 +13,15 @@ namespace Employee.API.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService _departmentService;
+        private readonly IMapper _mapper;
 
-        public DepartmentController(IDepartmentService departmentService) => _departmentService = departmentService;
+
+        public DepartmentController(IDepartmentService departmentService, IMapper mapper)
+        {
+            _departmentService = departmentService;
+            _mapper = mapper;
+
+        }
 
         // Get All Departments
         [HttpGet]
@@ -19,7 +30,8 @@ namespace Employee.API.Controllers
             try
             {
                 var departments = await _departmentService.GetAllDepartmentsAsync();
-                return Ok(departments);
+                var departmentsDto = _mapper.Map<IEnumerable<DepartmentDto>>(departments);
+                return Ok(departmentsDto);
             }
             catch (Exception ex)
             {
@@ -35,7 +47,8 @@ namespace Employee.API.Controllers
             {
                 var department = await _departmentService.GetDepartmentByIdAsync(id);
                 if (department == null) return NotFound();
-                return Ok(department);
+                var departmentDto = _mapper.Map<DepartmentDto>(department);
+                return Ok(departmentDto);
             }
             catch (Exception ex)
             {
@@ -45,12 +58,13 @@ namespace Employee.API.Controllers
 
         // Create Department
         [HttpPost]
-        public async Task<IActionResult> CreateDepartmentAsync([FromBody] Department department)
+        public async Task<IActionResult> CreateDepartmentAsync([FromBody] DepartmentDto departmentDto)
         {
             try
             {
+                var department = _mapper.Map<Department>(departmentDto);
                 await _departmentService.CreateDepartmentAsync(department);
-                return CreatedAtAction(nameof(GetDepartmentByIdAsync), new { id = department.Id }, department);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -60,12 +74,17 @@ namespace Employee.API.Controllers
 
         // Update Department
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateDepartmentAsync(int id, [FromBody] Department department)
+        public async Task<IActionResult> UpdateDepartmentAsync(int id, [FromBody] DepartmentDto departmentDto)
         {
             try
             {
-                var result = await _departmentService.UpdateDepartmentAsync(id, department);
+                var existingDepartment = await _departmentService.GetDepartmentByIdAsync(id);
+                if (existingDepartment == null) return NotFound();
+                departmentDto.Id = existingDepartment.Id;
+                _mapper.Map(departmentDto, existingDepartment);
+                var result = await _departmentService.UpdateDepartmentAsync(id, existingDepartment);
                 if (!result) return NotFound();
+
                 return Ok();
             }
             catch (Exception ex)

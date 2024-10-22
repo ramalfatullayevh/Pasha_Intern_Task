@@ -2,8 +2,8 @@
 
 namespace Employee.Service.DTOs
 {
-    public class CompanyDto:BaseDto
+    public class DepartmentDto:BaseDto
     {
-       
+        public int CompanyId { get; set; }
     }
 }
