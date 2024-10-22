@@ -1,9 +1,12 @@
+using AutoMapper;
 using Employee.Service.Extensions;
+using Employee.Service.Helper;
 using EmployeeManagement.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ServiceExtension(builder.Configuration);
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 // Add services to the container.
 

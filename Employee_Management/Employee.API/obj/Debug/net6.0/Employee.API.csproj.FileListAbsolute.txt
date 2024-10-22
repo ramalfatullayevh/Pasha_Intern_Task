@@ -73,3 +73,5 @@ C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.API\bin\
 C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.API\bin\Debug\net6.0\Employee.Core.pdb
 C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.API\bin\Debug\net6.0\Employee.Service.dll
 C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.API\bin\Debug\net6.0\Employee.Service.pdb
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.API\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Ramal\Desktop\Pasha_Employee_Task\Employee_Management\Employee.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
