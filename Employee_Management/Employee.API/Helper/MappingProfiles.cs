@@ -10,6 +10,7 @@ namespace Employee.Service.Helper
         {
             CreateMap<Company, CompanyDto>();
             CreateMap<Department, DepartmentDto>();
+            CreateMap<Employe, EmployeeDto>();
 
         }
     }

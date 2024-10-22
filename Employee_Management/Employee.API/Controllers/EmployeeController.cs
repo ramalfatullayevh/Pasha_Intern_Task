@@ -1,8 +1,9 @@
-﻿using Employee.Core.Entities;
+﻿using AutoMapper;
+using Employee.Core.Entities;
+using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
 using Employee.Service.Services.Concretes;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Employee.API.Controllers
 {
@@ -11,8 +12,14 @@ namespace Employee.API.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
+        private readonly IMapper _mapper;
 
-        public EmployeeController(IEmployeeService employeeService) => _employeeService = employeeService;
+
+        public EmployeeController(IEmployeeService employeeService, IMapper mapper)
+        {
+            _employeeService = employeeService;
+            _mapper = mapper;   
+        }
 
         // Get All Employees
         [HttpGet]
@@ -21,7 +28,8 @@ namespace Employee.API.Controllers
             try
             {
                 var employees = await _employeeService.GetAllEmployeesAsync();
-                return Ok(employees);
+                var employeesDto = _mapper.Map<IEnumerable<EmployeeDto>>(employees);
+                return Ok(employeesDto);
             }
             catch (Exception ex)
             {
@@ -37,7 +45,8 @@ namespace Employee.API.Controllers
             {
                 var employee = await _employeeService.GetEmployeeByIdAsync(id);
                 if (employee == null) return NotFound();
-                return Ok(employee);
+                var employeeDto = _mapper.Map<EmployeeDto>(employee);
+                return Ok(employeeDto);
             }
             catch (Exception ex)
             {
@@ -47,12 +56,13 @@ namespace Employee.API.Controllers
 
         // Add Employee
         [HttpPost]
-        public async Task<IActionResult> AddEmployeeAsync([FromBody] Employe employee)
+        public async Task<IActionResult> AddEmployeeAsync([FromBody] EmployeeDto employeeDto)
         {
             try
             {
+                var employee = _mapper.Map<Employe>(employeeDto);
                 await _employeeService.AddEmployeeAsync(employee);
-                return CreatedAtAction(nameof(GetEmployeeById), new { id = employee.Id }, employee);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -62,12 +72,17 @@ namespace Employee.API.Controllers
 
         // Update Employee
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateEmployeeAsync(int id, [FromBody] Employe employee)
+        public async Task<IActionResult> UpdateEmployeeAsync(int id, [FromBody] EmployeeDto employeeDto)
         {
             try
             {
-                var result = await _employeeService.UpdateEmployeeAsync(id, employee);
+                var existingEmployee = await _employeeService.GetEmployeeByIdAsync(id);
+                if (existingEmployee == null) return NotFound();
+                employeeDto.Id = existingEmployee.Id;
+                _mapper.Map(employeeDto, existingEmployee);
+                var result = await _employeeService.UpdateEmployeeAsync(id, existingEmployee);
                 if (!result) return NotFound();
+
                 return Ok();
             }
             catch (Exception ex)
