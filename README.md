@@ -22,8 +22,8 @@
 
 ## Proyekt Haqqında
 
- Bu proyekt Paşa Sığortanın backend təcrübəçi vakansiyasına uyğun olaraq 3-cü mərhələ (task mərhələsi) üçün nəzərdə tutulub.
- `Məqsəd:` İşçilərin rahat və sürətli idarə edilə bilməsi üçün backend API yazmaq.  </br></br>
+ Bu proyekt Paşa Sığortanın backend təcrübəçi vakansiyasına uyğun olaraq 3-cü mərhələ (task mərhələsi) üçün nəzərdə tutulub.<br>
+ `Məqsəd:` İşçilərin rahat və sürətli idarə edilə bilməsi üçün backend API yazmaq.  </br>
  `Funksionallıqlar:` Şirkət (Company), Departament (Department), İşçi (Employee) üzrə <b>CRUD</b> əməliyyatları yerinə yetirə bilmək. Şirkət, Departament
  və İşçilərin siyahısını əldə etmək, detallı olaraq baxmaq, yenisini yaratmaq, dəyişikliklər etmək, silmək və səhifələmək funksionallıqları mövcuddur. 
 
