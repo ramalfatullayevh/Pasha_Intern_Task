@@ -1,6 +1,5 @@
 ﻿using Employee.Core.Entities;
 using Employee.Service.DTOs;
-using System.Linq.Expressions;
 
 namespace Employee.Service.Services.Abstractions
 {

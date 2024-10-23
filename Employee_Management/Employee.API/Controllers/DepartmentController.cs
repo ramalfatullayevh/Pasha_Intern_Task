@@ -1,6 +1,5 @@
 ﻿using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
-using Employee.Service.Services.Concretes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.API.Controllers
