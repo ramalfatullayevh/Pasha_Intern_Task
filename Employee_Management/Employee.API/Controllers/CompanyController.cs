@@ -43,6 +43,22 @@ namespace Employee.API.Controllers
             }
         }
 
+        //GetEmployeeByCompanyId
+        [HttpGet("/GetEmployeesByCompanyId")]
+        public async Task<IActionResult> GetEmployeesByCompanyId(int companyId)
+        {
+            try
+            {
+                var employees = await _companyService.GetEmployeesByCompanyIdAsync(companyId);
+                if (employees == null || employees.Count == 0) return NotFound();
+                return Ok(employees);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
         // Get Company By ID
         [HttpGet("{id}/GetCompanyById")]
         public async Task<IActionResult> GetCompanyByIdAsync(int id)
