@@ -1,10 +1,6 @@
-﻿using AutoMapper;
-using Employee.Core.Entities;
-using Employee.Service.DTOs;
+﻿using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
-using Employee.Service.Services.Concretes;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Employee.API.Controllers
 {
@@ -14,12 +10,10 @@ namespace Employee.API.Controllers
     {
         private readonly IDepartmentService _departmentService;
 
-
         public DepartmentController(IDepartmentService departmentService ) => _departmentService = departmentService;
 
-
         // Get All Departments
-        [HttpGet]
+        [HttpGet("GetAllDepartments")]
         public async Task<IActionResult> GetAllDepartmentsAsync()
         {
             try
@@ -34,7 +28,7 @@ namespace Employee.API.Controllers
         }
 
         // Get A Department by ID
-        [HttpGet("{id}")]
+        [HttpGet("{id}/GetDepartmentById")]
         public async Task<IActionResult> GetDepartmentByIdAsync(int id)
         {
             try
@@ -49,8 +43,23 @@ namespace Employee.API.Controllers
             }
         }
 
+        // Get All Departments by Company ID
+        [HttpGet("{companyId}/GetAllDepartmentsByCompanyId")]
+        public async Task<IActionResult> GetDepartmentsByCompanyIdAsync(int companyId)
+        {
+            try
+            {
+                var departments = await _departmentService.GetDepartmentsByCompanyIdAsync(companyId);
+                return Ok(departments);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
         // Create Department
-        [HttpPost]
+        [HttpPost("CreateDepartment")]
         public async Task<IActionResult> CreateDepartmentAsync([FromBody] DepartmentDto departmentDto)
         {
             try
@@ -65,7 +74,7 @@ namespace Employee.API.Controllers
         }
 
         // Update Department
-        [HttpPut("{id}")]
+        [HttpPut("{id}/UpdateDepartment")]
         public async Task<IActionResult> UpdateDepartmentAsync(int id, [FromBody] DepartmentDto departmentDto)
         {
             try
@@ -81,7 +90,7 @@ namespace Employee.API.Controllers
         }
 
         // Delete Department
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}/DeleteDepartment")]
         public async Task<IActionResult> DeleteDepartmentAsync(int id)
         {
             try
@@ -95,20 +104,7 @@ namespace Employee.API.Controllers
             }
         }
 
-        // Get All Departments by Company ID
-        [HttpGet("company/{companyId}")]
-        public async Task<IActionResult> GetDepartmentsByCompanyIdAsync(int companyId)
-        {
-            try
-            {
-                var departments = await _departmentService.GetDepartmentsByCompanyIdAsync(companyId);
-                return Ok(departments);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
-            }
-        }
+      
 
     }
 }

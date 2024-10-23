@@ -44,7 +44,7 @@ namespace Employee.API.Controllers
         }
 
         // Create Company
-        [HttpPost("CreateNewCompany")]
+        [HttpPost("CreateCompany")]
         public async Task<IActionResult> CreateCompanyAsync([FromBody] CompanyDto companyDto)
         {
             try
@@ -59,7 +59,7 @@ namespace Employee.API.Controllers
         }
 
         // Update Company
-        [HttpPut("{id}/UpdateExsistCompany")]
+        [HttpPut("{id}/UpdateCompany")]
         public async Task<IActionResult> UpdateCompanyAsync(int id, [FromBody] CompanyDto companyDto)
         {
             try
@@ -75,7 +75,7 @@ namespace Employee.API.Controllers
         }
 
         // Delete Company
-        [HttpDelete("{id}/DeleteCompanyById")]
+        [HttpDelete("{id}/DeleteCompany")]
         public async Task<IActionResult> DeleteCompanyAsync(int id)
         {
             try
