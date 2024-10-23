@@ -13,10 +13,10 @@
 <details>
   <summary>Mündəricat</summary>
   <ol>
-    <li><a href="#about-the-project">Proyekt Haqqında</a></li>
-    <li><a href="#built-with">İstifadə Olunmuş Texnologiyalar</a></li>
-    <li><a href="#usage">İşlədilməsi</a></li>
-    <li><a href="#contact">Əlaqə</a></li>
+    <li>Proyekt Haqqında</li>
+    <li>İstifadə Olunmuş Texnologiyalar</li>
+    <li>İşlədilməsi</li>
+    <li>Əlaqə</li>
   </ol>
 </details>
 
