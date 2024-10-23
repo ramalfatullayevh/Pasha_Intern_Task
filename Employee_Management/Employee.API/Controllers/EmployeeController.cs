@@ -14,7 +14,7 @@ namespace Employee.API.Controllers
            
 
         // Get All Employees
-        [HttpGet("all")]
+        [HttpGet("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
             try
@@ -28,8 +28,23 @@ namespace Employee.API.Controllers
             }
         }
 
+        //Get All Filtered Employees
+        [HttpGet("GetEmployeesByFilter")]
+        public async Task<IActionResult> GetAllEmployeesWithFilter([FromQuery] EmployeeFilterDto filterDto)
+        {
+            try
+            {
+                var employees = await _employeeService.GetFilteredEmployeesAsync(filterDto);
+                return Ok(employees);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
         // Get A Employee by ID
-        [HttpGet("{id}")]
+        [HttpGet("{id}/GetEmployeeById")]
         public async Task<IActionResult> GetEmployeeById(int id)
         {
             try
@@ -45,7 +60,7 @@ namespace Employee.API.Controllers
         }
 
         // Add Employee
-        [HttpPost]
+        [HttpPost("AddEmployee")]
         public async Task<IActionResult> AddEmployeeAsync([FromBody] EmployeeDto employeeDto)
         {
             try
@@ -60,7 +75,7 @@ namespace Employee.API.Controllers
         }
 
         // Update Employee
-        [HttpPut("{id}")]
+        [HttpPut("{id}/UpdateEmployee")]
         public async Task<IActionResult> UpdateEmployeeAsync(int id, [FromBody] EmployeeDto employeeDto)
         {
             try
@@ -76,7 +91,7 @@ namespace Employee.API.Controllers
         }
 
         // Delete Employee
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}/DeleteEmployee")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
             try
@@ -90,20 +105,7 @@ namespace Employee.API.Controllers
             }
         }
 
-        //Get All Filtered Employees
-        [HttpGet("filter")]
-        public async Task<IActionResult> GetAllEmployeesWithFilter([FromQuery] EmployeeFilterDto filterDto)
-        {
-            try
-            {
-                var employees = await _employeeService.GetFilteredEmployeesAsync(filterDto);
-                return Ok(employees);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
-            }
-        }
+       
     }
 
 
