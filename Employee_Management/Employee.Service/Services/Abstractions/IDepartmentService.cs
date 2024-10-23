@@ -15,7 +15,9 @@ namespace Employee.Service.Services.Abstractions
 
         Task<bool> UpdateDepartmentAsync(int id, DepartmentDto departmentDto);
         Task<ICollection<Department>> GetDepartmentsByCompanyIdAsync(int companyId);
-        Task<ICollection<Employe>> GetEmployeesByDepartmentIdAsync(int departmentId);  
+        Task<ICollection<Employe>> GetEmployeesByDepartmentIdAsync(int departmentId);
+        Task<ICollection<Department>> GetFilteredDepartmentsAsync(DepartmentFilterDto filterDto);
+
 
 
     }

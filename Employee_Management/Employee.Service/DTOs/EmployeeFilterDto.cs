@@ -1,11 +1,10 @@
-﻿namespace Employee.Service.DTOs
+﻿using Employee.Service.DTOs.Base;
+
+namespace Employee.Service.DTOs
 {
-    public class EmployeeFilterDto
+    public class EmployeeFilterDto:FilterDto
     {
-        public string? Name { get; set; }
         public string? Surname { get; set; }
         public int? DepartmentId { get; set; }
-        public int PageNumber { get; set; } = 1; //default value
-        public int PageSize { get; set; } = 10; //default value
     }
 }

@@ -53,6 +53,25 @@ namespace Employee.Service.Services.Concretes
             return allEmployees.Where(e => e.DepartmentId == departmentId).ToList();
         }
 
+        public async Task<ICollection<Department>> GetFilteredDepartmentsAsync(DepartmentFilterDto filterDto)
+        {
+            var departments = await _unitOfWork.GetRepository<Department>().GetAllAsync();
+
+            if (!string.IsNullOrWhiteSpace(filterDto.Name)) departments = departments
+                    .Where(e => e.Name.Contains(filterDto.Name, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+
+            if (filterDto.CompanyId.HasValue)
+                departments = departments.Where(e => e.CompanyId == filterDto.CompanyId.Value).ToList();
+
+
+            return departments
+                .Skip((filterDto.PageNumber - 1) * filterDto.PageSize)
+                .Take(filterDto.PageSize)
+                .ToList();
+        }
+
         public async Task<bool> UpdateDepartmentAsync(int id, DepartmentDto departmentDto)
         {
             var existingDepartment = await GetDepartmentByIdAsync(id);

@@ -1,5 +1,6 @@
 ﻿using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
+using Employee.Service.Services.Concretes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.API.Controllers
@@ -19,6 +20,21 @@ namespace Employee.API.Controllers
             try
             {
                 var departments = await _departmentService.GetAllDepartmentsAsync();
+                return Ok(departments);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
+        //Get All Filtered Departments
+        [HttpGet("GetDepartmentsByFilter")]
+        public async Task<IActionResult> GetAllDepartmentsWithFilter([FromQuery] DepartmentFilterDto filterDto)
+        {
+            try
+            {
+                var departments = await _departmentService.GetFilteredDepartmentsAsync(filterDto);
                 return Ok(departments);
             }
             catch (Exception ex)

@@ -30,7 +30,7 @@ namespace Employee.API.Controllers
 
         //Get All Filtered Compainies
         [HttpGet("GetCompaniesByFilter")]
-        public async Task<IActionResult> GetAllEmployeesWithFilter([FromQuery] CompanyFilterDto filterDto)
+        public async Task<IActionResult> GetAllCompaniesWithFilter([FromQuery] CompanyFilterDto filterDto)
         {
             try
             {
