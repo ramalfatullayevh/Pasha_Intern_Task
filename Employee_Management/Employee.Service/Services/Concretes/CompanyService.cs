@@ -53,6 +53,20 @@ namespace Employee.Service.Services.Concretes
             return employees;
         }
 
+        public async Task<ICollection<Company>> GetFilteredCompaniesAsync(CompanyFilterDto filterDto)
+        {
+            var companies = await _unitOfWork.GetRepository<Company>().GetAllAsync();
+
+            if (!string.IsNullOrWhiteSpace(filterDto.Name)) companies = companies
+                    .Where(e => e.Name.Contains(filterDto.Name, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+            return companies
+                .Skip((filterDto.PageNumber - 1) * filterDto.PageSize)
+                .Take(filterDto.PageSize)
+                .ToList();
+        }
+
         public async Task<bool> UpdateCompanyAsync(int id, CompanyDto companyDto)
         {
             var existingCompany = await GetCompanyByIdAsync(id);

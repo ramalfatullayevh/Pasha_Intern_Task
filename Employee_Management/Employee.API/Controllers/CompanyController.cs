@@ -1,5 +1,6 @@
 ﻿using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
+using Employee.Service.Services.Concretes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Employee.API.Controllers
@@ -19,6 +20,21 @@ namespace Employee.API.Controllers
             try
             {
                 var companies = await _companyService.GetAllCompaniesAsync();
+                return Ok(companies);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
+        //Get All Filtered Compainies
+        [HttpGet("GetCompaniesByFilter")]
+        public async Task<IActionResult> GetAllEmployeesWithFilter([FromQuery] CompanyFilterDto filterDto)
+        {
+            try
+            {
+                var companies = await _companyService.GetFilteredCompaniesAsync(filterDto);
                 return Ok(companies);
             }
             catch (Exception ex)

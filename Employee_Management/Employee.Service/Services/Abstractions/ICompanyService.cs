@@ -14,6 +14,8 @@ namespace Employee.Service.Services.Abstractions
         Task DeleteCompanyAsync(int id);
 
         Task<bool> UpdateCompanyAsync(int id, CompanyDto companyDto); 
-        Task<ICollection<Employe>> GetEmployeesByCompanyIdAsync(int companyId);  
+        Task<ICollection<Employe>> GetEmployeesByCompanyIdAsync(int companyId);
+
+        Task<ICollection<Company>> GetFilteredCompaniesAsync(CompanyFilterDto filterDto);
     }
 }
