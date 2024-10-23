@@ -13,7 +13,7 @@ namespace Employee.API.Controllers
         public CompanyController(ICompanyService companyService) => _companyService = companyService; 
 
         // Get All Companies
-        [HttpGet]
+        [HttpGet("GetAllCompanies")]
         public async Task<IActionResult> GetAllCompaniesAsync()
         {
             try
@@ -28,7 +28,7 @@ namespace Employee.API.Controllers
         }
 
         // Get Company By ID
-        [HttpGet("{id}")]
+        [HttpGet("{id}/GetCompanyById")]
         public async Task<IActionResult> GetCompanyByIdAsync(int id)
         {
             try
@@ -44,7 +44,7 @@ namespace Employee.API.Controllers
         }
 
         // Create Company
-        [HttpPost]
+        [HttpPost("CreateNewCompany")]
         public async Task<IActionResult> CreateCompanyAsync([FromBody] CompanyDto companyDto)
         {
             try
@@ -59,13 +59,13 @@ namespace Employee.API.Controllers
         }
 
         // Update Company
-        [HttpPut("{id}")]
+        [HttpPut("{id}/UpdateExsistCompany")]
         public async Task<IActionResult> UpdateCompanyAsync(int id, [FromBody] CompanyDto companyDto)
         {
             try
             {
                 var result = await _companyService.UpdateCompanyAsync(id, companyDto);
-                if (!result) return NotFound();
+                if (!result) return NotFound("Company not found.");
                 return Ok();
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace Employee.API.Controllers
         }
 
         // Delete Company
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}/DeleteCompanyById")]
         public async Task<IActionResult> DeleteCompanyAsync(int id)
         {
             try
