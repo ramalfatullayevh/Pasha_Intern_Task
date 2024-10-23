@@ -65,6 +65,9 @@ namespace Employee.Service.Services.Concretes
             if (filterDto.CompanyId.HasValue)
                 departments = departments.Where(e => e.CompanyId == filterDto.CompanyId.Value).ToList();
 
+            if (filterDto.CreatedDate != null) departments = departments
+                    .Where(e => e.CreatedDate.Date == filterDto.CreatedDate.Value.Date)
+                    .ToList();
 
             return departments
                 .Skip((filterDto.PageNumber - 1) * filterDto.PageSize)

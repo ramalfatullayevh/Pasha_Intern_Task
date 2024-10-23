@@ -58,7 +58,15 @@ namespace Employee.Service.Services.Concretes
 
             if (filterDto.DepartmentId.HasValue)
                 employees = employees.Where(e => e.DepartmentId == filterDto.DepartmentId.Value).ToList();
-            
+
+            if (filterDto.CreatedDate != null) employees = employees
+                    .Where(e => e.CreatedDate.Date == filterDto.CreatedDate.Value.Date)
+                    .ToList();
+
+            if (filterDto.BirthDate != null) employees = employees
+                    .Where(e => e.CreatedDate.Date == filterDto.BirthDate.Value.Date)
+                    .ToList();
+
 
             return employees
                 .Skip((filterDto.PageNumber - 1) * filterDto.PageSize)

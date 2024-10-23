@@ -61,6 +61,11 @@ namespace Employee.Service.Services.Concretes
                     .Where(e => e.Name.Contains(filterDto.Name, StringComparison.OrdinalIgnoreCase))
                     .ToList();
 
+            if (filterDto.CreatedDate != null) companies = companies
+                    .Where(e => e.CreatedDate.Date == filterDto.CreatedDate.Value.Date)
+                    .ToList();
+            
+
             return companies
                 .Skip((filterDto.PageNumber - 1) * filterDto.PageSize)
                 .Take(filterDto.PageSize)
