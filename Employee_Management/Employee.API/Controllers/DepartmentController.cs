@@ -13,15 +13,10 @@ namespace Employee.API.Controllers
     public class DepartmentController : ControllerBase
     {
         private readonly IDepartmentService _departmentService;
-        private readonly IMapper _mapper;
 
 
-        public DepartmentController(IDepartmentService departmentService, IMapper mapper)
-        {
-            _departmentService = departmentService;
-            _mapper = mapper;
+        public DepartmentController(IDepartmentService departmentService ) => _departmentService = departmentService;
 
-        }
 
         // Get All Departments
         [HttpGet]
@@ -30,8 +25,7 @@ namespace Employee.API.Controllers
             try
             {
                 var departments = await _departmentService.GetAllDepartmentsAsync();
-                var departmentsDto = _mapper.Map<IEnumerable<DepartmentDto>>(departments);
-                return Ok(departmentsDto);
+                return Ok(departments);
             }
             catch (Exception ex)
             {
@@ -47,8 +41,7 @@ namespace Employee.API.Controllers
             {
                 var department = await _departmentService.GetDepartmentByIdAsync(id);
                 if (department == null) return NotFound();
-                var departmentDto = _mapper.Map<DepartmentDto>(department);
-                return Ok(departmentDto);
+                return Ok(department);
             }
             catch (Exception ex)
             {
@@ -62,8 +55,7 @@ namespace Employee.API.Controllers
         {
             try
             {
-                var department = _mapper.Map<Department>(departmentDto);
-                await _departmentService.CreateDepartmentAsync(department);
+                await _departmentService.CreateDepartmentAsync(departmentDto);
                 return Ok();
             }
             catch (Exception ex)
@@ -78,13 +70,8 @@ namespace Employee.API.Controllers
         {
             try
             {
-                var existingDepartment = await _departmentService.GetDepartmentByIdAsync(id);
-                if (existingDepartment == null) return NotFound();
-                departmentDto.Id = existingDepartment.Id;
-                _mapper.Map(departmentDto, existingDepartment);
-                var result = await _departmentService.UpdateDepartmentAsync(id, existingDepartment);
+                var result = await _departmentService.UpdateDepartmentAsync(id, departmentDto);
                 if (!result) return NotFound();
-
                 return Ok();
             }
             catch (Exception ex)

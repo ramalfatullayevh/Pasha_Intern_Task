@@ -8,9 +8,12 @@ namespace Employee.Service.Helper
     {
         public MappingProfiles() 
         {
-            CreateMap<Company, CompanyDto>();
-            CreateMap<Department, DepartmentDto>();
-            CreateMap<Employe, EmployeeDto>();
+            CreateMap<Company, CompanyDto>().ReverseMap()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()); 
+            CreateMap<Department, DepartmentDto>().ReverseMap()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()); 
+            CreateMap<Employe, EmployeeDto>().ReverseMap()
+                .ForMember(dest => dest.Id, opt => opt.Ignore()); 
 
         }
     }

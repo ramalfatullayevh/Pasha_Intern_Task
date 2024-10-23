@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using Employee.Core.Entities;
-using Employee.Service.DTOs;
+﻿using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,13 +9,8 @@ namespace Employee.API.Controllers
     public class CompanyController : ControllerBase
     {
         private readonly ICompanyService _companyService;
-        private readonly IMapper _mapper;
 
-        public CompanyController(ICompanyService companyService, IMapper mapper)
-        {
-            _companyService = companyService; 
-            _mapper = mapper;
-        }
+        public CompanyController(ICompanyService companyService) => _companyService = companyService; 
 
         // Get All Companies
         [HttpGet]
@@ -26,8 +19,7 @@ namespace Employee.API.Controllers
             try
             {
                 var companies = await _companyService.GetAllCompaniesAsync();
-                var companyDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
-                return Ok(companyDto);
+                return Ok(companies);
             }
             catch (Exception ex)
             {
@@ -43,8 +35,7 @@ namespace Employee.API.Controllers
             {
                 var company = await _companyService.GetCompanyByIdAsync(id);
                 if (company == null) return NotFound("Company not found.");
-                var companyDto = _mapper.Map<CompanyDto>(company);
-                return Ok(companyDto);
+                return Ok(company);
             }
             catch (Exception ex)
             {
@@ -58,8 +49,7 @@ namespace Employee.API.Controllers
         {
             try
             {
-                var company = _mapper.Map<Company>(companyDto);
-                await _companyService.CreateCompanyAsync(company);
+                await _companyService.CreateCompanyAsync(companyDto);
                 return Ok();
             }
             catch (Exception ex)
@@ -74,16 +64,8 @@ namespace Employee.API.Controllers
         {
             try
             {
-                var existingCompany = await _companyService.GetCompanyByIdAsync(id);
-                if (existingCompany == null) return NotFound();
-
-                companyDto.Id = existingCompany.Id;
-
-                _mapper.Map(companyDto, existingCompany);
-
-                var result = await _companyService.UpdateCompanyAsync(id, existingCompany);
+                var result = await _companyService.UpdateCompanyAsync(id, companyDto);
                 if (!result) return NotFound();
-
                 return Ok();
             }
             catch (Exception ex)

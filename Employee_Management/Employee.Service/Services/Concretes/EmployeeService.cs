@@ -1,4 +1,5 @@
-﻿using Employee.Core.Entities;
+﻿using AutoMapper;
+using Employee.Core.Entities;
 using Employee.Data.UnitOfWorks;
 using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
@@ -8,11 +9,19 @@ namespace Employee.Service.Services.Concretes
     public class EmployeeService : IEmployeeService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public EmployeeService(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
 
-        public async Task AddEmployeeAsync(Employe employee)
+        public EmployeeService(IUnitOfWork unitOfWork, IMapper mapper)
         {
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
+            
+        }
+
+        public async Task AddEmployeeAsync(EmployeeDto employeeDto)
+        {
+            var employee = _mapper.Map<Employe>(employeeDto);
             await _unitOfWork.GetRepository<Employe>().AddAsync(employee);
             await _unitOfWork.SaveAsync();
         }
@@ -23,9 +32,10 @@ namespace Employee.Service.Services.Concretes
             await _unitOfWork.SaveAsync();
         }
 
-        public async Task<ICollection<Employe>> GetAllEmployeesAsync()
+        public async Task<ICollection<EmployeeDto>> GetAllEmployeesAsync()
         {
-            return await _unitOfWork.GetRepository<Employe>().GetAllAsync();
+            var employees = await _unitOfWork.GetRepository<Employe>().GetAllAsync();
+            return _mapper.Map<ICollection<EmployeeDto>>(employees);
         }
 
         public async Task<Employe> GetEmployeeByIdAsync(int id)
@@ -56,15 +66,11 @@ namespace Employee.Service.Services.Concretes
                 .ToList();
         }
 
-        public async Task<bool> UpdateEmployeeAsync(int id, Employe employee)
+        public async Task<bool> UpdateEmployeeAsync(int id, EmployeeDto employeeDto)
         {
             var existingEmployee = await GetEmployeeByIdAsync(id);
             if (existingEmployee == null) return false;
-            existingEmployee.Name = employee.Name;
-            existingEmployee.Surname = employee.Surname;
-            existingEmployee.DepartmentId = employee.DepartmentId;
-            existingEmployee.BirthDate = employee.BirthDate;
-            existingEmployee.CreatedDate = employee.CreatedDate;
+            _mapper.Map(employeeDto, existingEmployee);
             await _unitOfWork.GetRepository<Employe>().UpdateAsync(existingEmployee);
             await _unitOfWork.SaveAsync();
             return true;

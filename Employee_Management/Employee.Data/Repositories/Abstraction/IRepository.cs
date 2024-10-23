@@ -6,11 +6,15 @@ namespace Employee.Data.Repositories.Abstraction
     public interface IRepository<T> where T : BaseEntity, new() 
     {
         //Get All
-        Task<ICollection<T>> GetAllAsync();
+        Task<ICollection<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null, params Expression<Func<T, object>>[] includeProperties);
 
 
         //GetById
         Task<T> GetByIdAsync(int id);
+
+        //Get
+        Task<T> GetAsync(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);
+
 
         //Add
         Task AddAsync(T entity);

@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.ServiceExtension(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
-
 // Add services to the container.
 
 builder.Services.AddControllers();

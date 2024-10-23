@@ -7,5 +7,7 @@ namespace Employee.Service.DTOs
         public int DepartmentId { get; set; }
         public string Surname { get; set; }
         public DateTime BirthDate { get; set; }
+
+
     }
 }

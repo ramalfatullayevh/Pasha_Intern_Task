@@ -1,5 +1,7 @@
-﻿using Employee.Core.Entities;
+﻿using AutoMapper;
+using Employee.Core.Entities;
 using Employee.Data.UnitOfWorks;
+using Employee.Service.DTOs;
 using Employee.Service.Services.Abstractions;
 
 namespace Employee.Service.Services.Concretes
@@ -7,11 +9,17 @@ namespace Employee.Service.Services.Concretes
     public class DepartmentService : IDepartmentService
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public DepartmentService(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
-
-        public async Task CreateDepartmentAsync(Department department)
+        public DepartmentService(IUnitOfWork unitOfWork, IMapper mapper)
         {
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
+        }
+
+        public async Task CreateDepartmentAsync(DepartmentDto departmentDto)
+        {
+            var department = _mapper.Map<Department>(departmentDto);
             await _unitOfWork.GetRepository<Department>().AddAsync(department);
             await _unitOfWork.SaveAsync();
         }
@@ -22,9 +30,10 @@ namespace Employee.Service.Services.Concretes
             await _unitOfWork.SaveAsync();
         }
 
-        public async Task<ICollection<Department>> GetAllDepartmentsAsync()
+        public async Task<ICollection<DepartmentDto>> GetAllDepartmentsAsync()
         {
-            return await _unitOfWork.GetRepository<Department>().GetAllAsync();
+            var departments = await _unitOfWork.GetRepository<Department>().GetAllAsync();
+            return _mapper.Map<ICollection<DepartmentDto>>(departments);
         }
 
         public async Task<Department> GetDepartmentByIdAsync(int id)
@@ -44,13 +53,11 @@ namespace Employee.Service.Services.Concretes
             return allEmployees.Where(e => e.DepartmentId == departmentId).ToList();
         }
 
-        public async Task<bool> UpdateDepartmentAsync(int id, Department department)
+        public async Task<bool> UpdateDepartmentAsync(int id, DepartmentDto departmentDto)
         {
             var existingDepartment = await GetDepartmentByIdAsync(id);
             if (existingDepartment == null) return false;
-            existingDepartment.Name = department.Name;
-            existingDepartment.CreatedDate = department.CreatedDate;
-            existingDepartment.CompanyId = department.CompanyId;
+            _mapper.Map(departmentDto, existingDepartment);
             await _unitOfWork.GetRepository<Department>().UpdateAsync(existingDepartment);
             await _unitOfWork.SaveAsync();
             return true;

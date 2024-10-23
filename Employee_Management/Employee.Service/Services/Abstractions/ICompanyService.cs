@@ -1,18 +1,19 @@
 ﻿using Employee.Core.Entities;
+using Employee.Service.DTOs;
 
 namespace Employee.Service.Services.Abstractions
 {
     public interface ICompanyService
     {
-        Task<ICollection<Company>> GetAllCompaniesAsync();
+        Task<ICollection<CompanyDto>> GetAllCompaniesAsync();
 
         Task<Company> GetCompanyByIdAsync(int id);
 
-        Task CreateCompanyAsync(Company company);
+        Task CreateCompanyAsync(CompanyDto companyDto);
 
         Task DeleteCompanyAsync(int id);
 
-        Task<bool> UpdateCompanyAsync(int id, Company company);
+        Task<bool> UpdateCompanyAsync(int id, CompanyDto companyDto); 
         Task<ICollection<Employe>> GetEmployeesByCompanyIdAsync(int companyId);  
     }
 }
