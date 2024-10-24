@@ -30,7 +30,7 @@
  
 ### İstifadə olunmuş texnologiyalar
 
-Bu bölmədə layihənizdə istifadə olunan əsas çərçivələr və kitabxanalar göstərilir. 
+Bu bölmədə layihədə istifadə olunan texnologiyalar göstərilir. 
 
 * ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 * ![ASP.NET](https://img.shields.io/badge/ASP.NET-5C2D91?style=for-the-badge&logo=aspnet&logoColor=white)
