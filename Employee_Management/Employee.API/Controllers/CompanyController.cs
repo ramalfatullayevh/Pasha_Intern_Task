@@ -80,6 +80,7 @@ namespace Employee.API.Controllers
         {
             try
             {
+                if (!ModelState.IsValid) return BadRequest(ModelState);
                 await _companyService.CreateCompanyAsync(companyDto);
                 return Ok();
             }
@@ -95,6 +96,7 @@ namespace Employee.API.Controllers
         {
             try
             {
+                if (!ModelState.IsValid) return BadRequest(ModelState);
                 var result = await _companyService.UpdateCompanyAsync(id, companyDto);
                 if (!result) return NotFound("Company not found.");
                 return Ok();

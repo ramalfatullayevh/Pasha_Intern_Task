@@ -65,6 +65,7 @@ namespace Employee.API.Controllers
         {
             try
             {
+                if (!ModelState.IsValid) return BadRequest(ModelState);
                 await _employeeService.AddEmployeeAsync(employeeDto);
                 return Ok();
             }
@@ -80,6 +81,7 @@ namespace Employee.API.Controllers
         {
             try
             {
+                if (!ModelState.IsValid) return BadRequest(ModelState);
                 var result = await _employeeService.UpdateEmployeeAsync(id, employeeDto);
                 if (!result) return NotFound();
                 return Ok();
